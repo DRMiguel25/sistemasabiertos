@@ -1,11 +1,35 @@
+/* Fondo con degradado oscuro */
+body {
+  background: linear-gradient(120deg, #2b354c 0%, #283e51 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+/* Tarjeta con efecto 3D y fondo blanco */
 .card {
   background-color: #ffffff;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   padding: 2rem;
   max-width: 400px;
   width: 100%;
   border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  color: #212529;
+}
+
+.card:hover {
+  transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
 }
 
 h2 {
@@ -45,10 +69,19 @@ button.btn-outline-danger:hover {
   color: white;
 }
 
+/* Estilos para los modales adaptados al tema */
+.modal-content {
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  color: #212529;
+}
+
 .modal-header {
   background-color: #007bff;
   color: white;
   border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .modal-title {
@@ -60,11 +93,16 @@ button.btn-outline-danger:hover {
   border-top: none;
 }
 
+/* Inputs más grandes y visibles */
 input.form-control {
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease;
 }
 
-.container {
-  margin-top: 3rem;
+input.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px #007bff;
 }
