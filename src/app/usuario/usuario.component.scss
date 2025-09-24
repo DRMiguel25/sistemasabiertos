@@ -1,19 +1,70 @@
-.modal {
-  background: rgba(0, 0, 0, 0.6); // overlay oscuro
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  border: none;
 }
 
-.modal-content {
-  animation: pop 0.3s ease-out;
-  border-radius: 12px;
+h2 {
+  margin-top: 1.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #343a40;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
 }
 
-@keyframes pop {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+p {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+button {
+  min-width: 130px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+button.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+button.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+input.form-control {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+}
+
+.container {
+  margin-top: 3rem;
 }

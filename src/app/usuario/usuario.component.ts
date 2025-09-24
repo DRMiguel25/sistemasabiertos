@@ -1,67 +1,57 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+declare var window: any;
 
 @Component({
   selector: 'app-usuario',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './usuario.component.html',
-  styleUrl: './usuario.component.scss'
+  styleUrls: ['./usuario.component.scss']
 })
 export class UsuarioComponent {
-  nombre: string = 'José';
-  edad: number = 21;
+  nombre = signal('Miguel');
+  edad = signal(25);
+  nombreCapitalizado = signal('MIGUEL');
 
-  // inputs temporales
-  nuevoNombre: string = '';
-  nuevaEdad: number = 0;
-  nuevoNombreCapitalizado: string = '';
+  nuevoNombre = signal('');
+  nuevaEdad = signal('');
+  nuevoCapitalizado = signal('');
 
-  // variables de control
-  modalNombreAbierto = false;
-  modalEdadAbierto = false;
-  modalResetAbierto = false;
-
-  get nombreCapitalizado(): string {
-    return this.nombre.toUpperCase();
+  abrirCambiarNombre() {
+    this.nuevoNombre.set(this.nombre());
+    let modal = new window.bootstrap.Modal(
+      document.getElementById('modalNombre')
+    );
+    modal.show();
   }
 
-  // abrir modales
-  abrirModalNombre() {
-    this.nuevoNombre = this.nombre;
-    this.modalNombreAbierto = true;
+  abrirCambiarEdad() {
+    this.nuevaEdad.set(String(this.edad()));
+    let modal = new window.bootstrap.Modal(
+      document.getElementById('modalEdad')
+    );
+    modal.show();
   }
 
-  abrirModalEdad() {
-    this.nuevaEdad = this.edad;
-    this.modalEdadAbierto = true;
+  abrirReset() {
+    this.nuevoCapitalizado.set(this.nombreCapitalizado());
+    let modal = new window.bootstrap.Modal(
+      document.getElementById('modalReset')
+    );
+    modal.show();
   }
 
-  abrirModalReset() {
-    this.nuevoNombreCapitalizado = this.nombreCapitalizado;
-    this.modalResetAbierto = true;
-  }
-
-  // guardar cambios
   guardarNombre() {
-    if (this.nuevoNombre.trim() !== '') {
-      this.nombre = this.nuevoNombre;
-    }
-    this.modalNombreAbierto = false;
+    this.nombre.set(this.nuevoNombre());
   }
 
   guardarEdad() {
-    if (this.nuevaEdad > 0) {
-      this.edad = this.nuevaEdad;
-    }
-    this.modalEdadAbierto = false;
+    this.edad.set(Number(this.nuevaEdad()));
   }
 
   guardarReset() {
-    if (this.nuevoNombreCapitalizado.trim() !== '') {
-      this.nombre = this.nuevoNombreCapitalizado;
-    }
-    this.modalResetAbierto = false;
+    this.nombreCapitalizado.set(this.nuevoCapitalizado());
   }
 }
