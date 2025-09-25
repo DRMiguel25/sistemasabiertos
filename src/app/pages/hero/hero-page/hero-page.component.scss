@@ -1,0 +1,27 @@
+.hero-container {
+  margin: 2rem auto;
+  max-width: 370px;
+  background: linear-gradient(135deg, #233755 0%, #1e2746 100%);
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 6px 24px 4px #0a101a40;
+}
+
+dl {
+  margin-bottom: 1rem;
+}
+
+dt, dd {
+  margin-bottom: 0.4rem;
+}
+
+.display-5 {
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+button {
+  min-width: 120px;
+}
