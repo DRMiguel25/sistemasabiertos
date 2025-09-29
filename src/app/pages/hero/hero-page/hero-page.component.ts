@@ -1,7 +1,10 @@
 import { Component, computed, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hero-page',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './hero-page.component.html',
   styleUrls: ['./hero-page.component.scss']
 })
@@ -10,13 +13,8 @@ export class HeroPageComponent {
   age = signal(45);
 
   heroDescrription = computed(() => {
-    const description = `${this.name()} - ${this.age()}`;
-    return description
-  });
-
-/*   getHeroDescription() {
     return `${this.name()} - ${this.age()}`;
-  } */
+  });
 
   changeHero() {
     this.name.set('Spiderman');

@@ -21,25 +21,19 @@ export class UsuarioComponent {
 
   abrirCambiarNombre() {
     this.nuevoNombre.set(this.nombre());
-    let modal = new window.bootstrap.Modal(
-      document.getElementById('modalNombre')
-    );
+    let modal = new window.bootstrap.Modal(document.getElementById('modalNombre'));
     modal.show();
   }
 
   abrirCambiarEdad() {
     this.nuevaEdad.set(String(this.edad()));
-    let modal = new window.bootstrap.Modal(
-      document.getElementById('modalEdad')
-    );
+    let modal = new window.bootstrap.Modal(document.getElementById('modalEdad'));
     modal.show();
   }
 
   abrirReset() {
     this.nuevoCapitalizado.set(this.nombreCapitalizado());
-    let modal = new window.bootstrap.Modal(
-      document.getElementById('modalReset')
-    );
+    let modal = new window.bootstrap.Modal(document.getElementById('modalReset'));
     modal.show();
   }
 

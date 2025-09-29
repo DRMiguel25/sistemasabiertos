@@ -1,0 +1,37 @@
+.mini-launcher {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1051;
+  width: 44px;
+  height: 44px;
+  padding: 6px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.nav-panel {
+  position: fixed;
+  top: 78px; // justo debajo del botón
+  right: 24px;
+  z-index: 1050;
+  background: #222;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  padding: 18px 20px;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.nav-link {
+  color: #5ebefa;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  transition: color 0.25s;
+  &:hover,
+  &.active {
+    color: #fff;
+    text-shadow: 0 0 2px #1294e2;
+  }
+}
