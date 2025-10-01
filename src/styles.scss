@@ -95,3 +95,13 @@ button.btn-primary, button.btn-danger {
     text-shadow: 0 0 6px var(--color-primary-dark);
   }
 }
+/* Nuevas variables para cada transformación */
+.db-classic {
+  --color-transformation-hair: #f9d71c; /* amarillo dorado */
+  --color-transformation-glow: #f5c518;
+}
+
+.db-super {
+  --color-transformation-hair: #3a9bdc; /* azul puro */
+  --color-transformation-glow: #5ac1f3;
+}
