@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { Character } from '../models/character.interface';
+import { Character } from '../interfaces/character.interface';
 import { CharacterListComponent } from "../character-list/character-list.component";
 
 
@@ -12,7 +12,7 @@ import { CharacterListComponent } from "../character-list/character-list.compone
   imports: [CommonModule, FormsModule, CharacterListComponent],
   templateUrl: './dragonball-super.component.html',
   styleUrls: ['./dragonball-super.component.css']
-})
+}) 
 export class DragonballSuperComponent {
   name = signal("");
   power = signal(0);
